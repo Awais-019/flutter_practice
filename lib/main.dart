@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -17,14 +18,24 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: const Center(
-          child: Image(
-        image: AssetImage('assets/bg-1.jpg'),
-      ),
+      body: Center(
+        // child: Icon(
+        //   Icons.airport_shuttle,
+        //   color: Colors.lightBlue,
+        //   size: 50.0,
+        // )
+        //   child: ElevatedButton.icon(
+        //       onPressed: () {},
+        //       icon: const Icon(Icons.mail),
+        //       label: const Text("Mail me")),
+        // ),
+        child: IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.alternate_email),
+            color: Colors.amber),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => const Text("Clicked"),
-        backgroundColor: Colors.red[600],
+        onPressed: () {},
         child: const Text("Click"),
       ),
     );
