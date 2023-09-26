@@ -3,33 +3,34 @@ import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: Home(),
+    home: QuoteList(),
   ));
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class QuoteList extends StatefulWidget {
+  const QuoteList({super.key});
+
+  @override
+  State<QuoteList> createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+
+  List<String> quotes = [
+    'quote1', 'quote2', 'quote3'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text("My First App"),
+        title: const Text("Awesome Quotes"),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Text("Hello World!"),
-          TextButton(onPressed: () {}, child: const Text("Click me!"))
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.red[600],
-        child: const Text("Click"),
+        children: quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
